@@ -6,22 +6,35 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import HomeScreen from "./src/containers/HomeScreen";
 import DetailsScreen from "./src/containers/DetailsScreen";
-import LinkScreen from "./src/containers/LinkScreen"
+import LinkScreen from "./src/containers/LinkScreen";
 
 const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
+      <StatusBar backgroundColor="plum" barStyle="dark-content" />
+      <Drawer.Navigator
+        initialRouteName="Home"
+        drawerStyle={{
+          backgroundColor: "#4C566A",
+          // width: "75%",
+        }}
+        overlayColor="transparent"
+        // hideStatusBar={true}
+        drawerContentOptions={{
+          activeTintColor: "plum",
+          itemStyle: { marginVertical: 3 },
+        }}
+      >
         <Drawer.Screen name="Home" component={HomeScreen} />
+        {/* <DrawerItem */}
         <Drawer.Screen name="Details" component={DetailsScreen} />
         {/* need to rename details to something else */}
-        <Drawer.Screen name="Links" component={LinkScreen} />
+        <Drawer.Screen name="Links" component={LinkScreen} drawerStyle={styles.label} />
         {/* <Drawer.Screen name="Details" component={DetailsScreen} /> */}
       </Drawer.Navigator>
       {/* <View style={styles.container}>
-          <StatusBar backgroundColor="plum" barStyle="dark-content" />
           <Text style={styles.text}>Open up App.js to start working on your new app!</Text>
         </View> */}
       {/* <Stack.Navigator> */}
@@ -37,10 +50,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#4C566A",
     // color: "white",
-    alignItems: "center",
-    justifyContent: "center",
+    // alignItems: "center",
+    // justifyContent: "center",
   },
-  text: {
+  label: {
     color: "white",
   },
 });
