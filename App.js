@@ -6,6 +6,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import HomeScreen from "./src/containers/HomeScreen";
 import DetailsScreen from "./src/containers/DetailsScreen";
+import LinkScreen from "./src/containers/LinkScreen"
 
 const Drawer = createDrawerNavigator();
 
@@ -16,7 +17,7 @@ export default function App() {
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Details" component={DetailsScreen} />
         {/* need to rename details to something else */}
-        {/* <Drawer.Screen name="Details" component={DetailsScreen} /> */}
+        <Drawer.Screen name="Links" component={LinkScreen} />
         {/* <Drawer.Screen name="Details" component={DetailsScreen} /> */}
       </Drawer.Navigator>
       {/* <View style={styles.container}>
