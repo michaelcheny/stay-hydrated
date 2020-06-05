@@ -6,7 +6,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="plum" barStyle="dark-content" />
-      <Text style={styles.text}>Open up App.js to start working on your new app!</Text>
+      <Text style={styles.text}>Open up App.js to start working on your new app! Stay Hydrated!</Text>
     </View>
   );
 }
