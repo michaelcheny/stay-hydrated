@@ -25,6 +25,7 @@ export default function App() {
         drawerContentOptions={{
           activeTintColor: "plum",
           itemStyle: { marginVertical: 3 },
+          labelStyle: { padding: 3, fontSize: 18, fontWeight: "bold", fontFamily: "monospace" },
         }}
       >
         <Drawer.Screen name="Home" component={HomeScreen} />
