@@ -25,14 +25,23 @@ export default function App() {
         drawerContentOptions={{
           activeTintColor: "plum",
           itemStyle: { marginVertical: 3 },
-          labelStyle: { padding: 3, fontSize: 18, fontWeight: "bold", fontFamily: "monospace" },
+          labelStyle: {
+            padding: 3,
+            fontSize: 18,
+            fontWeight: "bold",
+            fontFamily: "supreme",
+          },
         }}
       >
         <Drawer.Screen name="Home" component={HomeScreen} />
         {/* <DrawerItem */}
         <Drawer.Screen name="Details" component={DetailsScreen} />
         {/* need to rename details to something else */}
-        <Drawer.Screen name="Links" component={LinkScreen} drawerStyle={styles.label} />
+        <Drawer.Screen
+          name="Links"
+          component={LinkScreen}
+          drawerStyle={styles.label}
+        />
         {/* <Drawer.Screen name="Details" component={DetailsScreen} /> */}
       </Drawer.Navigator>
       {/* <View style={styles.container}>
@@ -56,5 +65,9 @@ const styles = StyleSheet.create({
   },
   label: {
     color: "white",
+  },
+  custom: {
+    fontFamily: "supreme",
+    fontSize: 12,
   },
 });
