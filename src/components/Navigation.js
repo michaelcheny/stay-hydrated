@@ -2,6 +2,8 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { Drawer, DrawerItem, Layout, Text, IndexPath } from "@ui-kitten/components";
+import { HomeScreen } from "../containers/HomeScreen";
+import Icon from "../../assets/icon.png";
 
 const { Navigator, Screen } = createDrawerNavigator();
 
@@ -21,15 +23,17 @@ const DrawerContent = ({ navigation, state }) => (
   <Drawer
     selectedIndex={new IndexPath(state.index)}
     onSelect={(index) => navigation.navigate(state.routeNames[index.row])}
+    style={{ paddingTop: 25 }}
+    appearance="noDivier"
   >
-    <DrawerItem title="Users" />
+    <DrawerItem title="Users" style />
     <DrawerItem title="Orders" />
   </Drawer>
 );
 
 export const DrawerNavigator = () => (
   <Navigator drawerContent={(props) => <DrawerContent {...props} />}>
-    <Screen name="Users" component={UsersScreen} />
+    <Screen name="Users" component={HomeScreen} />
     <Screen name="Orders" component={OrdersScreen} />
   </Navigator>
 );

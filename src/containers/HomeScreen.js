@@ -1,6 +1,7 @@
 import React from "react";
 import { SafeAreaView } from "react-native";
 import { Button, Divider, Layout, TopNavigation } from "@ui-kitten/components";
+import * as eva from "@eva-design/eva";
 
 // import { createStackNavigator } from "@react-navigation/stack";
 
@@ -10,12 +11,14 @@ export const HomeScreen = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <TopNavigation title="MyApp" alignment="center" />
+    <SafeAreaView style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.8)" }}>
+      {/* <view style={}> */}
+      <TopNavigation title="Home" alignment="center" style={{ marginTop: 25 }} />
       <Divider />
       <Layout style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <Button onPress={navigateDetails}>OPEN DETAILS</Button>
       </Layout>
+      {/* </view> */}
     </SafeAreaView>
   );
 };
