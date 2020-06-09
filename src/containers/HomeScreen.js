@@ -1,27 +1,23 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { SafeAreaView } from "react-native";
+import { Button, Divider, Layout, TopNavigation } from "@ui-kitten/components";
 
-const HomeScreen = () => {
+// import { createStackNavigator } from "@react-navigation/stack";
+
+export const HomeScreen = ({ navigation }) => {
+  const navigateDetails = () => {
+    navigation.navigate("Details");
+  };
+
   return (
-    <>
-      <Image
-        source={require("../../assets/ghettoWaterLogo.png")}
-        style={{
-          display: "flex",
-          // justifyContent: "center",
-          alignSelf: "center",
-          // resizeMode: "repeat",
-          height: "15%",
-          width: "100%",
-        }}
-      />
-      {/* <View style={{ backgroundColor: "green", width: "100%", height: "10%" }} /> */}
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Home Screen</Text>
-      </View>
-    </>
+    <SafeAreaView style={{ flex: 1 }}>
+      <TopNavigation title="MyApp" alignment="center" />
+      <Divider />
+      <Layout style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Button onPress={navigateDetails}>OPEN DETAILS</Button>
+      </Layout>
+    </SafeAreaView>
   );
 };
 
-export default HomeScreen;
+// export default HomeScreen;
